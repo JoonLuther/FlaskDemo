@@ -1,0 +1,84 @@
+{% extends "index.html" %}
+
+{% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="transparentbox">
+    <br>
+    <br>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <main role="main" class="inner cover">
+        <br>
+        <p><img src="https://media.discordapp.net/attachments/877428287280922697/1101305590048890890/Screenshot_2023-04-27_at_5.20.53_PM-removebg-preview.png?width=1592&height=628" alt="CodeBlue-Logo"></p>
+        <br>
+        <p class="lead">
+            <a href="#cam" class="small-btn">Get Started</a>
+        </p>
+        </main>
+    </div>
+    <br>
+    <br>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+    <div class="col-md-6">
+        
+        <div class="jumbotron">
+            <h1 class="display-5">Technology designed to make strokes obsolete.</h1>
+            <p class="lead">Take immediate action when stroke symptoms are occuring with Code Blue. By scanning facial images, Code Blue detects potentially dangerous facial drooping and notifies an emergency contact.</p>
+            <hr class="my-4">
+                <p><h4>1 in 4 people will have a stroke in their lifetime</h4></p>
+                <p><h4>60% of people are unable to identify the signs of stroke</h4></p>
+                <p><h4>87% of strokes are ischemic</h4></p>
+                <p><h4>Strokes can occur at any age</h4></p>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">About Code Blue</h5>
+                <p class="card-text">Code Blue is a web application for stroke detection. Code Blue utilizes artificial intelligence to recognize facial paralysis. Users can acess Code Blue on any device with an internet connection.</p>
+            </div> 
+        
+        </div>
+      </div>
+</div>
+<br>
+<a id="cam"></a>
+<!-- Camera section -->
+<div class="transparentbox">
+    <br>
+    <div class="section center" id="demo">
+        <h1 class="cover-heading"></h1><br>
+        <p class="lead">Position your face in the frame of the camera and click the Detect Stroke Symptoms button below.</p>
+            <img class="center" style="object-fit: contain;" src="{{ url_for('video_feed') }}">
+            <br><br>
+            <!-- <a class="waves-effect waves-light btn-large" id="generate" href="/predict">Detect Asymmetry</a> -->
+            <a class="small-btn" href="/predict" role="button">Detect Stroke Symptoms</a>
+             <!-- <a class="small-btn" href="/uploader" role="button" method = "POST">Upload Image</a> -->
+            <form method=POST enctype=multipart/form-data>
+                <input type=file name=file>
+                <input type=submit value=Upload>
+            </form>
+            <br><br>
+
+    </div>
+</div>
+
+{% endblock %}
+
